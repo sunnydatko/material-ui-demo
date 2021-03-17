@@ -7,7 +7,6 @@ const getBackgroundColor = (value) => {
     case "Pending":
       return "rgba(255, 152, 0)";
     case "Canceled":
-    case "Rejected":
       return "rgba(244, 67, 54)";
     default:
       return "";

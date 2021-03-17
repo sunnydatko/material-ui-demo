@@ -1,23 +1,23 @@
 // hooks
-import { useMemo } from "react";
-import { useHistory } from "react-router-dom";
-import { merge } from "lodash";
+import { useMemo } from 'react';
+// import { useHistory } from "react-router-dom";
+import { merge } from 'lodash';
 
 // components
-import Table from "components/core/Table";
-import CustomerIcon from "components/customers/CustomerIcon";
+import Table from 'components/core/Table';
+import CustomerIcon from 'components/customers/CustomerIcon';
 
 // data
-import CUSTOMER_DATA from "helpers/customerData.json";
-import PAYMENT_DATA from "helpers/paymentData.json";
+import CUSTOMER_DATA from 'helpers/customerData.json';
+import PAYMENT_DATA from 'helpers/paymentData.json';
 
 const COLUMNS = [
   {
-    Header: "Date Received",
-    accessor: "date",
+    Header: 'Date Received',
+    accessor: 'date',
   },
   {
-    Header: "Customer",
+    Header: 'Customer',
     Cell: (props) => {
       const { original } = props.row;
       console.log(original);
@@ -26,37 +26,39 @@ const COLUMNS = [
   },
 
   {
-    Header: "Payment Mode",
-    accessor: "payment_mode",
+    Header: 'Payment Mode',
+    accessor: 'payment_mode',
     Cell: ({ value }) => {
       return value;
     },
   },
   {
-    Header: "Amount",
-    accessor: "amount",
+    Header: 'Amount',
+    accessor: 'amount',
     disableFilters: true,
     Cell: ({ value }) => {
-      return "$" + parseInt(value).toFixed(2).toLocaleString();
+      return '$' + parseInt(value).toFixed(2).toLocaleString();
     },
   },
 ];
 
 const InvoiceList = () => {
-  let mappedPayments = [];
-
-  PAYMENT_DATA.forEach((payment) => {
-    const customer = CUSTOMER_DATA.filter(
-      (customer) => customer.customer_id === payment.customer_id
-    )[0];
-
-    mappedPayments.push(merge(payment, customer));
-  });
-
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => mappedPayments, []);
+  const data = useMemo(() => {
+    let mappedPayments = [];
 
-  const history = useHistory();
+    PAYMENT_DATA.forEach((payment) => {
+      const customer = CUSTOMER_DATA.filter(
+        (customer) => customer.customer_id === payment.customer_id
+      )[0];
+
+      mappedPayments.push(merge(payment, customer));
+    });
+
+    return mappedPayments;
+  }, []);
+
+  // const history = useHistory();
 
   const handleRowClick = (invoice) => {
     // history.push(`/invoice/${invoice.invoice_number}`);

@@ -3,9 +3,7 @@ import {
   Box,
   Button,
   Container,
-  Grid,
   Paper,
-  Typography,
 } from "@material-ui/core";
 
 // components

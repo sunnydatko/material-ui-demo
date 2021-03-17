@@ -1,22 +1,22 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 // components
-import Appbar from "./Appbar";
-import Sidebar from "./Sidebar";
+import Appbar from './Appbar';
+import Sidebar from './Sidebar';
 
 // helpers
-import * as spacing from "helpers/spacing";
+import * as spacing from 'helpers/spacing';
 
 const LayoutContent = styled.div`
   background-color: ${(props) => props.theme.palette.secondary.light};
   margin-left: ${(props) =>
-    props.isExpanded ? spacing.sidebarExpanded : spacing.sidebarCondensed};
+    props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
   transition: margin-left 0.5s ease-in;
 `;
 
 const PageWrapper = styled.div`
-  margin-top: ${spacing.appbarHeight};
+  margin-top: ${spacing.APPBAR_HEIGHT};
 `;
 
 const Layout = ({ children }) => {

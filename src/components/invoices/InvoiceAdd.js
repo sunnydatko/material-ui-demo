@@ -97,7 +97,6 @@ const InvoiceAdd = () => {
                         <MenuItem value={10}>Completed</MenuItem>
                         <MenuItem value={10}>Pending</MenuItem>
                         <MenuItem value={20}>Paid</MenuItem>
-                        <MenuItem value={30}>Rejected</MenuItem>
                       </Select>
                     </FormControl>
                   </Grid>

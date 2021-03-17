@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 // material ui
 import {
@@ -12,29 +12,29 @@ import {
   MenuItem,
   Typography,
   useMediaQuery,
-} from "@material-ui/core";
+} from '@material-ui/core';
 import {
   ExitToApp as ExitToAppIcon,
   KeyboardArrowDownRounded as ChevDownIcon,
   Person as PersonIcon,
-} from "@material-ui/icons";
-import { useTheme } from "@material-ui/core/styles";
+} from '@material-ui/icons';
+import { useTheme } from '@material-ui/core/styles';
 
 // components
-import Messages from "components/core/Messages";
-import Notifications from "components/core/Notifications";
+import Messages from 'components/core/Messages';
+import Notifications from 'components/core/Notifications';
 
 // helpers
-import * as spacing from "helpers/spacing";
+import * as spacing from 'helpers/spacing';
 
 const Root = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.palette.secondary.light};
   box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.12);
   display: flex;
-  height: ${spacing.appbarHeight};
+  height: ${spacing.APPBAR_HEIGHT};
   left: ${(props) =>
-    props.isExpanded ? spacing.sidebarExpanded : spacing.sidebarCondensed};
+    props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
   position: fixed;
   right: 0;
   top: 0;
@@ -45,7 +45,7 @@ const Root = styled.div`
 const AppbarContent = styled.div`
   position: absolute;
   left: 0px;
-  height: ${spacing.appbarHeight};
+  height: ${spacing.APPBAR_HEIGHT};
   top: 0;
   right: 0;
   display: flex;
@@ -55,7 +55,7 @@ const AppbarContent = styled.div`
 
 const AppBar = ({ isExpanded }) => {
   const theme = useTheme();
-  const matchesMd = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -72,11 +72,11 @@ const AppBar = ({ isExpanded }) => {
       <AppbarContent>
         {matchesMd && (
           <InputBase
-            inputProps={{ "aria-label": "search" }}
-            placeholder="Search…"
+            inputProps={{ 'aria-label': 'search' }}
+            placeholder='Search…'
           />
         )}
-        <Grid container justify="flex-end" spacing={3}>
+        <Grid container justify='flex-end' spacing={3}>
           <Grid item>
             <Messages />
           </Grid>
@@ -85,16 +85,16 @@ const AppBar = ({ isExpanded }) => {
           </Grid>
           <Grid item>
             <Button
-              aria-controls="user-menu"
-              aria-haspopup="true"
+              aria-controls='user-menu'
+              aria-haspopup='true'
               endIcon={<ChevDownIcon />}
               onClick={handleShow}
               startIcon={
                 <Avatar
                   style={{
                     backgroundColor: theme.palette.primary.main,
-                    height: "32px",
-                    width: "32px",
+                    height: '32px',
+                    width: '32px',
                   }}
                 >
                   SD
@@ -102,18 +102,18 @@ const AppBar = ({ isExpanded }) => {
               }
             >
               {matchesMd && (
-                <Typography variant="subtitle1">Sunny Datko</Typography>
+                <Typography variant='subtitle1'>Sunny Datko</Typography>
               )}
             </Button>
             <MuiMenu
               anchorEl={anchorEl}
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
               getContentAnchorEl={null}
-              id="user-menu"
+              id='user-menu'
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
-              transformOrigin={{ vertical: "top", horizontal: "center" }}
+              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
             >
               <MenuItem onClick={handleClose}>
                 <ListItemIcon>

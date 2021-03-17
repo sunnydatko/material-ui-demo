@@ -44,7 +44,7 @@ const CustomerInvoiceList = ({ customer }) => {
   );
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => customerInvoices, []);
+  const data = useMemo(() => customerInvoices, [customerInvoices]);
   const history = useHistory();
 
   const handleRowClick = (invoice) => {

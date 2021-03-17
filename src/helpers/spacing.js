@@ -1,7 +1,7 @@
-export const appbarHeight = "74px";
+export const APPBAR_HEIGHT = "74px";
 
 // sidebar
-export const sidebarCondensed = "72px";
-export const sidebarExpanded = "260px";
+export const SIDEBAR_CONDENSED = "72px";
+export const SIDEBAR_EXPANDED = "260px";
 
 

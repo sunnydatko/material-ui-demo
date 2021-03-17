@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 // material ui
 import {
@@ -12,7 +12,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-} from "@material-ui/core";
+} from '@material-ui/core';
 import {
   AttachMoney,
   ArrowBack,
@@ -21,11 +21,11 @@ import {
   Home,
   Receipt,
   Settings,
-} from "@material-ui/icons";
+} from '@material-ui/icons';
 
-import logo from "assets/sunny-designs.svg";
-import reactIcon from "assets/react-icon.svg";
-import * as spacing from "helpers/spacing";
+import logo from 'assets/sunny-designs.svg';
+import reactIcon from 'assets/react-icon.svg';
+import * as spacing from 'helpers/spacing';
 
 const Root = styled.div`
   background-color: ${(props) => props.theme.palette.primary.dark} !important;
@@ -37,13 +37,13 @@ const Root = styled.div`
   overflow-x: hidden;
   transition: width 0.5s ease-in;
   width: ${(props) =>
-    props.isExpanded ? spacing.sidebarExpanded : spacing.sidebarCondensed};
+    props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
 
   .MuiListItem-root {
     padding: ${(props) =>
-      props.isExpanded ? "12px 0 12px 24px" : "16px 0 16px 24px"};
+      props.isExpanded ? '12px 0 12px 24px' : '16px 0 16px 24px'};
     width: ${(props) =>
-      props.isExpanded ? spacing.sidebarExpanded : spacing.sidebarCondensed};
+      props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
     transition: width 0.5s ease-in;
   }
 
@@ -69,29 +69,29 @@ const LayoutContent = styled.div`
 
 const menuItems = [
   {
-    title: "Home",
-    icon: <Home style={{ fill: "white" }} />,
-    target: "/home",
+    title: 'Home',
+    icon: <Home style={{ fill: 'white' }} />,
+    target: '/home',
   },
   {
-    title: "Customers",
-    icon: <Face style={{ fill: "white" }} />,
-    target: "/customers",
+    title: 'Customers',
+    icon: <Face style={{ fill: 'white' }} />,
+    target: '/customers',
   },
   {
-    title: "Invoices",
-    icon: <Receipt style={{ fill: "white" }} />,
-    target: "/invoices",
+    title: 'Invoices',
+    icon: <Receipt style={{ fill: 'white' }} />,
+    target: '/invoices',
   },
   {
-    title: "Payments",
-    icon: <AttachMoney style={{ fill: "white" }} />,
-    target: "/payments",
+    title: 'Payments',
+    icon: <AttachMoney style={{ fill: 'white' }} />,
+    target: '/payments',
   },
   {
-    title: "Settings",
-    icon: <Settings style={{ fill: "white" }} />,
-    target: "/settings",
+    title: 'Settings',
+    icon: <Settings style={{ fill: 'white' }} />,
+    target: '/settings',
   },
 ];
 
@@ -100,24 +100,24 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
     <Root isExpanded={isExpanded}>
       <LayoutContent isExpanded={isExpanded}>
         <Box>
-          <Grid container justify="center">
+          <Grid container justify='center'>
             <img
-              alt="logo"
+              alt='logo'
               src={isExpanded ? logo : reactIcon}
               style={{
-                height: "46px",
-                width: isExpanded ? "200px" : "46px",
-                margin: "10px 0",
+                height: '46px',
+                width: isExpanded ? '200px' : '46px',
+                margin: '10px 0',
               }}
             />
           </Grid>
 
-          <Divider variant="middle" />
-          <Box paddingTop="12px">
+          <Divider variant='middle' />
+          <Box paddingTop='12px'>
             <List>
               {menuItems.map((item, index) => (
                 <ListItem
-                  activeClassName="Mui-selected"
+                  activeClassName='Mui-selected'
                   button
                   component={NavLink}
                   key={index}
@@ -134,17 +134,17 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
           <Grid container>
             {isExpanded ? (
               <Button
-                color="secondary"
+                color='secondary'
                 onClick={() => setIsExpanded(!isExpanded)}
                 startIcon={<ArrowBack />}
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
               >
                 Collapse
               </Button>
             ) : (
-              <Box margin="0px auto">
+              <Box margin='0px auto'>
                 <IconButton
-                  color="secondary"
+                  color='secondary'
                   onClick={() => setIsExpanded(!isExpanded)}
                 >
                   <ArrowForward />
