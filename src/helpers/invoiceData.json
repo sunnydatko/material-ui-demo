@@ -24,7 +24,7 @@
     "invoice_number": "4223-85938",
     "date_processed": "8/25/2020",
     "amount": "2254.89",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 6
   },
   {
@@ -66,14 +66,14 @@
     "invoice_number": "7621-29674",
     "date_processed": "4/17/2020",
     "amount": "1376.27",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 93
   },
   {
     "invoice_number": "7217-66018",
     "date_processed": "5/30/2020",
     "amount": "2371.89",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 6
   },
   {
@@ -101,7 +101,7 @@
     "invoice_number": "8069-58139",
     "date_processed": "1/29/2021",
     "amount": "1179.48",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 96
   },
   {
@@ -129,7 +129,7 @@
     "invoice_number": "0907-96746",
     "date_processed": "5/1/2020",
     "amount": "1074.41",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 36
   },
   {
@@ -143,14 +143,14 @@
     "invoice_number": "0656-88692",
     "date_processed": "11/23/2020",
     "amount": "2377.99",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 195
   },
   {
     "invoice_number": "4801-94577",
     "date_processed": "3/10/2020",
     "amount": "1388.52",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 60
   },
   {
@@ -325,7 +325,7 @@
     "invoice_number": "3382-18813",
     "date_processed": "12/10/2020",
     "amount": "1121.07",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 118
   },
   {
@@ -416,7 +416,7 @@
     "invoice_number": "4091-28324",
     "date_processed": "2/13/2020",
     "amount": "641.37",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 42
   },
   {
@@ -444,14 +444,14 @@
     "invoice_number": "7170-13491",
     "date_processed": "7/27/2020",
     "amount": "1088.96",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 82
   },
   {
     "invoice_number": "4780-38757",
     "date_processed": "11/2/2020",
     "amount": "2019.64",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 101
   },
   {
@@ -507,7 +507,7 @@
     "invoice_number": "8174-20186",
     "date_processed": "11/6/2020",
     "amount": "2083.01",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 30
   },
   {
@@ -542,14 +542,14 @@
     "invoice_number": "3515-44829",
     "date_processed": "3/16/2020",
     "amount": "2050.81",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 2
   },
   {
     "invoice_number": "3258-81165",
     "date_processed": "8/7/2020",
     "amount": "1435.32",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 35
   },
   {
@@ -605,7 +605,7 @@
     "invoice_number": "8216-74057",
     "date_processed": "2/2/2021",
     "amount": "719.01",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 125
   },
   {
@@ -619,7 +619,7 @@
     "invoice_number": "7538-12185",
     "date_processed": "5/4/2020",
     "amount": "1140.18",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 16
   },
   {
@@ -647,7 +647,7 @@
     "invoice_number": "8939-52948",
     "date_processed": "8/2/2020",
     "amount": "2024.81",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 169
   },
   {
@@ -668,7 +668,7 @@
     "invoice_number": "6575-73142",
     "date_processed": "12/19/2020",
     "amount": "580.86",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 164
   },
   {
@@ -703,7 +703,7 @@
     "invoice_number": "6295-81644",
     "date_processed": "8/4/2020",
     "amount": "1865.86",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 188
   },
   {
@@ -724,7 +724,7 @@
     "invoice_number": "2860-50243",
     "date_processed": "8/9/2020",
     "amount": "1678.67",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 198
   },
   {
@@ -745,7 +745,7 @@
     "invoice_number": "8646-35258",
     "date_processed": "12/10/2020",
     "amount": "2123.73",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 99
   },
   {
@@ -773,7 +773,7 @@
     "invoice_number": "3210-42077",
     "date_processed": "5/11/2020",
     "amount": "797.91",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 13
   },
   {
@@ -787,14 +787,14 @@
     "invoice_number": "4922-73029",
     "date_processed": "3/8/2020",
     "amount": "898.64",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 100
   },
   {
     "invoice_number": "6773-53529",
     "date_processed": "5/18/2020",
     "amount": "1342.03",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 103
   },
   {
@@ -808,7 +808,7 @@
     "invoice_number": "7849-28964",
     "date_processed": "10/9/2020",
     "amount": "1773.40",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 13
   },
   {
@@ -843,14 +843,14 @@
     "invoice_number": "1876-09302",
     "date_processed": "10/22/2020",
     "amount": "2488.19",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 38
   },
   {
     "invoice_number": "6585-53652",
     "date_processed": "12/21/2020",
     "amount": "1116.88",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 134
   },
   {
@@ -885,7 +885,7 @@
     "invoice_number": "5516-67688",
     "date_processed": "4/20/2020",
     "amount": "815.22",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 135
   },
   {
@@ -906,14 +906,14 @@
     "invoice_number": "5457-09014",
     "date_processed": "3/23/2020",
     "amount": "2245.43",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 68
   },
   {
     "invoice_number": "9476-67032",
     "date_processed": "4/8/2020",
     "amount": "798.18",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 49
   },
   {
@@ -955,7 +955,7 @@
     "invoice_number": "8497-60078",
     "date_processed": "8/9/2020",
     "amount": "1858.55",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 4
   },
   {
@@ -983,7 +983,7 @@
     "invoice_number": "6949-93047",
     "date_processed": "12/30/2020",
     "amount": "637.22",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 11
   },
   {
@@ -1039,21 +1039,21 @@
     "invoice_number": "7256-25473",
     "date_processed": "2/11/2020",
     "amount": "2276.57",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 23
   },
   {
     "invoice_number": "9812-35937",
     "date_processed": "10/7/2020",
     "amount": "1248.31",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 175
   },
   {
     "invoice_number": "9163-06692",
     "date_processed": "6/18/2020",
     "amount": "1598.99",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 112
   },
   {
@@ -1074,7 +1074,7 @@
     "invoice_number": "4101-60452",
     "date_processed": "11/18/2020",
     "amount": "967.86",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 172
   },
   {
@@ -1102,7 +1102,7 @@
     "invoice_number": "5633-85093",
     "date_processed": "4/27/2020",
     "amount": "2196.21",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 55
   },
   {
@@ -1144,7 +1144,7 @@
     "invoice_number": "7780-14354",
     "date_processed": "11/23/2020",
     "amount": "713.79",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 85
   },
   {
@@ -1179,14 +1179,14 @@
     "invoice_number": "4927-21021",
     "date_processed": "8/4/2020",
     "amount": "1458.99",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 38
   },
   {
     "invoice_number": "5483-95976",
     "date_processed": "9/19/2020",
     "amount": "1981.20",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 117
   },
   {
@@ -1200,7 +1200,7 @@
     "invoice_number": "4480-00252",
     "date_processed": "6/25/2020",
     "amount": "1205.25",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 59
   },
   {
@@ -1249,7 +1249,7 @@
     "invoice_number": "7438-78763",
     "date_processed": "4/18/2020",
     "amount": "676.10",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 179
   },
   {
@@ -1298,7 +1298,7 @@
     "invoice_number": "8157-48660",
     "date_processed": "3/1/2020",
     "amount": "834.73",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 173
   },
   {
@@ -1312,7 +1312,7 @@
     "invoice_number": "1421-21518",
     "date_processed": "7/12/2020",
     "amount": "1676.04",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 30
   },
   {
@@ -1382,14 +1382,14 @@
     "invoice_number": "8082-36128",
     "date_processed": "11/3/2020",
     "amount": "2119.66",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 78
   },
   {
     "invoice_number": "0204-76377",
     "date_processed": "9/5/2020",
     "amount": "1748.21",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 174
   },
   {
@@ -1424,7 +1424,7 @@
     "invoice_number": "2118-86965",
     "date_processed": "11/9/2020",
     "amount": "1057.55",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 162
   },
   {
@@ -1480,7 +1480,7 @@
     "invoice_number": "1150-59448",
     "date_processed": "4/1/2020",
     "amount": "1202.89",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 26
   },
   {
@@ -1494,7 +1494,7 @@
     "invoice_number": "8937-23839",
     "date_processed": "4/15/2020",
     "amount": "574.60",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 145
   },
   {
@@ -1529,14 +1529,14 @@
     "invoice_number": "2374-10879",
     "date_processed": "12/4/2020",
     "amount": "751.33",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 181
   },
   {
     "invoice_number": "5777-05945",
     "date_processed": "7/30/2020",
     "amount": "2050.16",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 12
   },
   {
@@ -1557,7 +1557,7 @@
     "invoice_number": "5045-20492",
     "date_processed": "3/29/2020",
     "amount": "1535.74",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 13
   },
   {
@@ -1571,7 +1571,7 @@
     "invoice_number": "1806-55088",
     "date_processed": "12/29/2020",
     "amount": "1725.96",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 53
   },
   {
@@ -1599,7 +1599,7 @@
     "invoice_number": "8033-00755",
     "date_processed": "4/3/2020",
     "amount": "1379.32",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 136
   },
   {
@@ -1620,14 +1620,14 @@
     "invoice_number": "0346-39482",
     "date_processed": "6/22/2020",
     "amount": "600.77",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 148
   },
   {
     "invoice_number": "7470-37640",
     "date_processed": "11/21/2020",
     "amount": "1895.71",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 156
   },
   {
@@ -1648,7 +1648,7 @@
     "invoice_number": "1452-23006",
     "date_processed": "8/7/2020",
     "amount": "841.38",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 175
   },
   {
@@ -1662,7 +1662,7 @@
     "invoice_number": "8921-49962",
     "date_processed": "11/18/2020",
     "amount": "1828.11",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 90
   },
   {
@@ -1683,7 +1683,7 @@
     "invoice_number": "9656-56568",
     "date_processed": "1/22/2021",
     "amount": "847.82",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 66
   },
   {
@@ -1697,14 +1697,14 @@
     "invoice_number": "9245-27329",
     "date_processed": "2/16/2020",
     "amount": "1316.68",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 153
   },
   {
     "invoice_number": "3408-14723",
     "date_processed": "10/13/2020",
     "amount": "1294.46",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 18
   },
   {
@@ -1718,7 +1718,7 @@
     "invoice_number": "8817-49983",
     "date_processed": "10/7/2020",
     "amount": "946.48",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 5
   },
   {
@@ -1739,7 +1739,7 @@
     "invoice_number": "7170-95545",
     "date_processed": "6/23/2020",
     "amount": "2337.73",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 66
   },
   {
@@ -1795,7 +1795,7 @@
     "invoice_number": "9054-52524",
     "date_processed": "7/23/2020",
     "amount": "2234.86",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 14
   },
   {
@@ -1809,7 +1809,7 @@
     "invoice_number": "9679-83601",
     "date_processed": "12/15/2020",
     "amount": "1438.82",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 141
   },
   {
@@ -1823,7 +1823,7 @@
     "invoice_number": "6526-10519",
     "date_processed": "10/31/2020",
     "amount": "2093.70",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 189
   },
   {
@@ -1844,7 +1844,7 @@
     "invoice_number": "9703-42889",
     "date_processed": "11/22/2020",
     "amount": "715.48",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 8
   },
   {
@@ -1865,7 +1865,7 @@
     "invoice_number": "3505-53969",
     "date_processed": "8/28/2020",
     "amount": "1910.22",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 138
   },
   {
@@ -1907,7 +1907,7 @@
     "invoice_number": "5885-65855",
     "date_processed": "6/7/2020",
     "amount": "1066.61",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 110
   },
   {
@@ -1921,14 +1921,14 @@
     "invoice_number": "8230-27120",
     "date_processed": "1/22/2021",
     "amount": "1271.31",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 64
   },
   {
     "invoice_number": "1738-10818",
     "date_processed": "12/10/2020",
     "amount": "1033.48",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 68
   },
   {
@@ -1942,7 +1942,7 @@
     "invoice_number": "1574-49940",
     "date_processed": "5/27/2020",
     "amount": "1553.48",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 174
   },
   {
@@ -1984,7 +1984,7 @@
     "invoice_number": "5390-83273",
     "date_processed": "3/19/2020",
     "amount": "521.86",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 168
   },
   {
@@ -2012,7 +2012,7 @@
     "invoice_number": "3274-92237",
     "date_processed": "4/3/2020",
     "amount": "1283.44",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 163
   },
   {
@@ -2054,7 +2054,7 @@
     "invoice_number": "9441-47355",
     "date_processed": "3/6/2020",
     "amount": "2311.70",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 165
   },
   {
@@ -2089,7 +2089,7 @@
     "invoice_number": "3910-82919",
     "date_processed": "11/6/2020",
     "amount": "608.46",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 16
   },
   {
@@ -2103,7 +2103,7 @@
     "invoice_number": "0542-75027",
     "date_processed": "7/23/2020",
     "amount": "1936.04",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 139
   },
   {
@@ -2117,14 +2117,14 @@
     "invoice_number": "4019-36843",
     "date_processed": "7/31/2020",
     "amount": "1671.24",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 73
   },
   {
     "invoice_number": "4060-21023",
     "date_processed": "9/24/2020",
     "amount": "1926.36",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 63
   },
   {
@@ -2208,14 +2208,14 @@
     "invoice_number": "6340-36305",
     "date_processed": "3/17/2020",
     "amount": "673.30",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 194
   },
   {
     "invoice_number": "1112-37531",
     "date_processed": "8/22/2020",
     "amount": "1946.36",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 56
   },
   {
@@ -2285,7 +2285,7 @@
     "invoice_number": "4792-59964",
     "date_processed": "11/22/2020",
     "amount": "2471.37",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 51
   },
   {
@@ -2348,7 +2348,7 @@
     "invoice_number": "3129-18861",
     "date_processed": "1/10/2021",
     "amount": "696.92",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 74
   },
   {
@@ -2369,7 +2369,7 @@
     "invoice_number": "6443-25424",
     "date_processed": "7/9/2020",
     "amount": "2090.99",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 126
   },
   {
@@ -2383,7 +2383,7 @@
     "invoice_number": "9588-48073",
     "date_processed": "10/13/2020",
     "amount": "1303.21",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 98
   },
   {
@@ -2467,7 +2467,7 @@
     "invoice_number": "1729-88963",
     "date_processed": "9/13/2020",
     "amount": "1332.85",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 157
   },
   {
@@ -2481,7 +2481,7 @@
     "invoice_number": "6028-38556",
     "date_processed": "11/2/2020",
     "amount": "513.14",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 130
   },
   {
@@ -2509,7 +2509,7 @@
     "invoice_number": "3947-29027",
     "date_processed": "12/8/2020",
     "amount": "1104.76",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 9
   },
   {
@@ -2565,7 +2565,7 @@
     "invoice_number": "6423-46875",
     "date_processed": "11/29/2020",
     "amount": "1619.12",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 50
   },
   {
@@ -2586,7 +2586,7 @@
     "invoice_number": "1339-58196",
     "date_processed": "5/16/2020",
     "amount": "1254.31",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 191
   },
   {
@@ -2600,14 +2600,14 @@
     "invoice_number": "3278-07000",
     "date_processed": "5/27/2020",
     "amount": "525.83",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 62
   },
   {
     "invoice_number": "0879-44392",
     "date_processed": "5/8/2020",
     "amount": "1338.27",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 11
   },
   {
@@ -2621,7 +2621,7 @@
     "invoice_number": "7532-46345",
     "date_processed": "8/17/2020",
     "amount": "2051.26",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 152
   },
   {
@@ -2656,28 +2656,28 @@
     "invoice_number": "2720-00957",
     "date_processed": "12/13/2020",
     "amount": "648.37",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 12
   },
   {
     "invoice_number": "7095-21067",
     "date_processed": "11/14/2020",
     "amount": "2089.20",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 84
   },
   {
     "invoice_number": "6865-26011",
     "date_processed": "3/24/2020",
     "amount": "1116.39",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 32
   },
   {
     "invoice_number": "8222-23212",
     "date_processed": "8/9/2020",
     "amount": "913.19",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 79
   },
   {
@@ -2691,7 +2691,7 @@
     "invoice_number": "5663-54576",
     "date_processed": "3/15/2020",
     "amount": "540.97",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 41
   },
   {
@@ -2705,7 +2705,7 @@
     "invoice_number": "9016-44525",
     "date_processed": "3/27/2020",
     "amount": "2348.96",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 171
   },
   {
@@ -2747,7 +2747,7 @@
     "invoice_number": "1837-55546",
     "date_processed": "5/20/2020",
     "amount": "1079.05",
-    "status": "Rejected",
+    "status": "Canceled",
     "customer_id": 112
   },
   {

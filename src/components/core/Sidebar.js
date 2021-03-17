@@ -23,9 +23,9 @@ import {
   Settings,
 } from "@material-ui/icons";
 
-import logo from "../../assets/sunny-designs.svg";
-import reactIcon from "../../assets/react-icon.svg";
-import * as spacing from "../../helpers/spacing";
+import logo from "assets/sunny-designs.svg";
+import reactIcon from "assets/react-icon.svg";
+import * as spacing from "helpers/spacing";
 
 const Root = styled.div`
   background-color: ${(props) => props.theme.palette.primary.dark} !important;

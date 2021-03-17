@@ -21,11 +21,11 @@ import {
 import { useTheme } from "@material-ui/core/styles";
 
 // components
-import Messages from "../shared/Messages";
-import Notifications from "../shared/Notifications";
+import Messages from "components/core/Messages";
+import Notifications from "components/core/Notifications";
 
 // helpers
-import * as spacing from "../../helpers/spacing";
+import * as spacing from "helpers/spacing";
 
 const Root = styled.div`
   align-items: center;

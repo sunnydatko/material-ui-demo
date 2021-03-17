@@ -6,7 +6,7 @@ import Appbar from "./Appbar";
 import Sidebar from "./Sidebar";
 
 // helpers
-import * as spacing from "../../helpers/spacing";
+import * as spacing from "helpers/spacing";
 
 const LayoutContent = styled.div`
   background-color: ${(props) => props.theme.palette.secondary.light};
