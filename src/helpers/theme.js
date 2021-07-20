@@ -1,7 +1,24 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { grey, blueGrey } from "@material-ui/core/colors";
 
+export const Breakpoints = {
+  ExtraSmall: 0,
+  Small: 420,
+  Medium: 790,
+  Large: 992,
+  ExtraLarge: 1200,
+};
+
 export default createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: Breakpoints.ExtraSmall,
+      sm: Breakpoints.Small,
+      md: Breakpoints.Medium,
+      lg: Breakpoints.Large,
+      xl: Breakpoints.ExtraLarge,
+    },
+  },
   typography: {
     fontFamily: "Open Sans",
     fontWeightRegular: 500,

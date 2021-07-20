@@ -96,7 +96,6 @@ const Messages = () => {
             {messages.length} New Messages
           </Typography>
           <Box style={{ cursor: "pointer" }}>
-            {console.log(messages)}
             {messages.map((message) => {
               return (
                 <>

@@ -20,7 +20,6 @@ const COLUMNS = [
     Header: 'Customer',
     Cell: (props) => {
       const { original } = props.row;
-      console.log(original);
       return <CustomerIcon value={original} />;
     },
   },

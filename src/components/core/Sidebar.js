@@ -1,18 +1,18 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { NavLink, useRouteMatch } from "react-router-dom";
+import styled from "styled-components";
 
 // material ui
 import {
   Box,
   Button,
-  Divider,
   Grid,
+  Hidden,
   IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-} from '@material-ui/core';
+} from "@material-ui/core";
 import {
   AttachMoney,
   ArrowBack,
@@ -21,11 +21,20 @@ import {
   Home,
   Receipt,
   Settings,
-} from '@material-ui/icons';
+} from "@material-ui/icons";
 
-import logo from 'assets/sunny-designs.svg';
-import reactIcon from 'assets/react-icon.svg';
-import * as spacing from 'helpers/spacing';
+import logo from "assets/sunny-designs.svg";
+import reactIcon from "assets/react-icon.svg";
+import * as spacing from "helpers/spacing";
+
+const Branding = styled.div`
+  margin: 10px auto;
+  padding: 8px 4px;
+  max-height: ${(props) => (props.isExpanded ? "31px" : "50px")};
+  max-width: ${(props) => (props.isExpanded ? "230px" : "72px")};
+  min-height: ${(props) => (props.isSmallScreen ? "31px" : "50px")};
+  min-width: ${(props) => (props.isSmallScreen ? "230px" : "72px")};
+`;
 
 const Root = styled.div`
   background-color: ${(props) => props.theme.palette.primary.dark} !important;
@@ -36,14 +45,13 @@ const Root = styled.div`
   bottom: 0;
   overflow-x: hidden;
   transition: width 0.5s ease-in;
-  width: ${(props) =>
-    props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
+  width: ${(props) => getSidebarWidth(props)};
+  z-index: 999;
 
   .MuiListItem-root {
     padding: ${(props) =>
-      props.isExpanded ? '12px 0 12px 24px' : '16px 0 16px 24px'};
-    width: ${(props) =>
-      props.isExpanded ? spacing.SIDEBAR_EXPANDED : spacing.SIDEBAR_CONDENSED};
+      props.isExpanded ? "12px 0 12px 24px" : "16px 0 16px 24px"};
+    width: ${(props) => (props.isExpanded ? "240px" : "inherit")};
     transition: width 0.5s ease-in;
   }
 
@@ -61,99 +69,114 @@ const Root = styled.div`
   }
 `;
 
-const LayoutContent = styled.div`
-  display: grid;
-  grid-template-rows: auto 48px;
-  min-height: calc(100vh);
-`;
+const getSidebarWidth = (props) => {
+  if (props.isSmallScreen) {
+    if (props.isExpanded) {
+      return spacing.SIDEBAR_MOBILE_WIDTH_EXPANDED;
+    } else {
+      return spacing.SIDEBAR_MOBILE_WIDTH_CONDENSED;
+    }
+  } else {
+    if (props.isExpanded) {
+      return spacing.SIDEBAR_DESKTOP_WIDTH_EXPANDED;
+    } else {
+      return spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED;
+    }
+  }
+};
 
-const menuItems = [
-  {
-    title: 'Home',
-    icon: <Home style={{ fill: 'white' }} />,
-    target: '/home',
-  },
-  {
-    title: 'Customers',
-    icon: <Face style={{ fill: 'white' }} />,
-    target: '/customers',
-  },
-  {
-    title: 'Invoices',
-    icon: <Receipt style={{ fill: 'white' }} />,
-    target: '/invoices',
-  },
-  {
-    title: 'Payments',
-    icon: <AttachMoney style={{ fill: 'white' }} />,
-    target: '/payments',
-  },
-  {
-    title: 'Settings',
-    icon: <Settings style={{ fill: 'white' }} />,
-    target: '/settings',
-  },
-];
+const menuItems = (matches) => {
+  return [
+    {
+      title: "Home",
+      icon: <Home style={{ fill: "white" }} />,
+      target: "/home",
+    },
+    {
+      title: "Customers",
+      icon: <Face style={{ fill: "white" }} />,
+      target: "/customers",
+    },
+    {
+      title: "Invoices",
+      icon: <Receipt style={{ fill: "white" }} />,
+      target: "/invoices",
+    },
+    {
+      title: "Payments",
+      icon: <AttachMoney style={{ fill: "white" }} />,
+      target: "/payments",
+    },
+    {
+      title: "Settings",
+      icon: <Settings style={{ fill: "white" }} />,
+      target: "/settings",
+    },
+  ];
+};
 
-const Sidebar = ({ isExpanded, setIsExpanded }) => {
+const Sidebar = ({ isExpanded, isSmallScreen, setIsExpanded }) => {
+  const matches = useRouteMatch(["*"]);
+
   return (
-    <Root isExpanded={isExpanded}>
-      <LayoutContent isExpanded={isExpanded}>
-        <Box>
-          <Grid container justify='center'>
-            <img
-              alt='logo'
-              src={isExpanded ? logo : reactIcon}
-              style={{
-                height: '46px',
-                width: isExpanded ? '200px' : '46px',
-                margin: '10px 0',
-              }}
-            />
-          </Grid>
+    <Root
+      isExpanded={isExpanded}
+      isSmallScreen={isSmallScreen}
+      style={{ gridArea: "sidebar" }}
+    >
+      <Branding isExpanded={isExpanded}>
+        <img
+          alt="logo"
+          src={isSmallScreen ? logo : isExpanded ? logo : reactIcon}
+        />
+      </Branding>
 
-          <Divider variant='middle' />
-          <Box paddingTop='12px'>
-            <List>
-              {menuItems.map((item, index) => (
-                <ListItem
-                  activeClassName='Mui-selected'
-                  button
-                  component={NavLink}
-                  key={index}
-                  to={item.target}
-                >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  {isExpanded && <ListItemText primary={item.title} />}
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </Box>
-        <Box>
-          <Grid container>
+      <List>
+        {menuItems(matches).map((item, index) => (
+          <ListItem
+            activeClassName="Mui-selected"
+            alignItems="center"
+            button
+            component={NavLink}
+            key={index}
+            onClick={() =>
+              isSmallScreen && isExpanded
+                ? setIsExpanded(!isExpanded)
+                : undefined
+            }
+            to={item.target}
+            style={{ width: "100%" }}
+          >
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            {isExpanded && <ListItemText primary={item.title} />}
+          </ListItem>
+        ))}
+      </List>
+      <Box>
+        <Grid container>
+          <Hidden only={["xs", "sm"]}>
             {isExpanded ? (
               <Button
-                color='secondary'
+                color="secondary"
                 onClick={() => setIsExpanded(!isExpanded)}
                 startIcon={<ArrowBack />}
-                style={{ width: '100%' }}
+                style={{ width: "100%" }}
               >
                 Collapse
               </Button>
             ) : (
-              <Box margin='0px auto'>
+              <Box margin="0px auto">
                 <IconButton
-                  color='secondary'
+                  color="secondary"
                   onClick={() => setIsExpanded(!isExpanded)}
                 >
                   <ArrowForward />
                 </IconButton>
               </Box>
             )}
-          </Grid>
-        </Box>
-      </LayoutContent>
+          </Hidden>
+        </Grid>
+      </Box>
     </Root>
   );
 };
