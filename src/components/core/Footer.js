@@ -1,48 +1,32 @@
 import styled from "styled-components";
 
 // material ui
-import {
-  Box,
-  Typography,
-  Link as MuiLink,
-  useMediaQuery,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
-import { Favorite } from "@material-ui/icons";
+import { Typography, Link as MuiLink } from "@material-ui/core";
 
-const Root = styled.div`
-  align-self: center;
-
+const StyledFooter = styled.div`
   .MuiTypography-body2 {
-    font-size: ${(props) => (props.matchesXs ? "12px" : undefined)};
+    font-size: 12px;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.values.md}px) {
+      font-size: inherit;
+    }
   }
 `;
 
 const Footer = () => {
-  const theme = useTheme();
-  const matchesXs = useMediaQuery(theme.breakpoints.down("xs"));
-
   return (
-    <Root matchesXs={matchesXs}>
-      <Typography align="center" display="block" variant="caption">
-        <Box
-          display="flex"
-          flexWrap="wrap"
-          alignItems="center"
-          justifyContent="center"
-          width="100%"
+    <StyledFooter>
+      <Typography align="center" display="block" variant="body2">
+        Made by &nbsp;
+        <MuiLink
+          href="http://www.sunnydatko.com"
+          target="_blank"
+          variant="inherit"
         >
-          Made with <Favorite style={{ fill: "red" }} /> by
-          <MuiLink
-            href="http://www.sunnydatko.com"
-            target="_blank"
-            variant="inherit"
-          >
-            Sunny
-          </MuiLink>
-        </Box>
+          Sunny Datko
+        </MuiLink>
       </Typography>
-    </Root>
+    </StyledFooter>
   );
 };
 

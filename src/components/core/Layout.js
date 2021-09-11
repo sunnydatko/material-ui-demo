@@ -1,85 +1,75 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 // components
 import Appbar from "./Appbar";
+import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import Shadow from "./Shadow";
 
 // helpers
 import * as spacing from "helpers/spacing";
-import { Breakpoints } from "helpers/theme";
-import useIsScreenSize from "hooks/useIsScreenSize";
 
-const Root = styled.div`
-display: grid;
-grid-template-areas: ${({ isSmallScreen }) =>
-  isSmallScreen ? "'appbar' 'main';" : "'sidebar' 'main'"}
-grid-template-columns: ${({ isExpanded, isSmallScreen }) =>
-  isSmallScreen
-    ? "auto;"
-    : `${
-        isExpanded
+const GlobalLayout = createGlobalStyle`
+  #root {
+    display: grid;
+    grid-template-areas:
+      'appbar'
+      'main'
+      'footer';
+    grid-template-columns: auto;
+    grid-template-rows: ${spacing.APPBAR_HEIGHT} 1fr auto;
+    min-height: 100vh;
+    transition: margin-left 0.5s ease-in;
+
+    & > main {
+      grid-area: main;
+      overflow: auto;
+      flex: 1 0 auto;
+      & > div {
+        min-width: 0px;
+      }
+    }
+    footer {
+      padding: 16px;
+      grid-area: footer;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.values.lg}px) {
+      grid-template-areas:
+        'appbar appbar'
+        'sidebar main'
+        'sidebar footer';
+      grid-template-columns: ${({ $isExpanded }) =>
+        $isExpanded
           ? spacing.SIDEBAR_DESKTOP_WIDTH_EXPANDED
-          : spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED
-      };`}
-height: 100vh;
-width: 100vw;
-& > main {
-  margin-top: ${spacing.APPBAR_HEIGHT};
-  overflow: auto; 
-  & > div {
-    min-width: ${Breakpoints.ExtraSmall}px;
-  },
-},
-`;
-
-const getLeftMarginValue = (isSmallScreen, isExpanded) => {
-  if (isSmallScreen) {
-    return spacing.SIDEBAR_MOBILE_WIDTH_CONDENSED;
-  } else {
-    if (isExpanded) {
-      return spacing.SIDEBAR_DESKTOP_WIDTH_EXPANDED;
-    } else {
-      return spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED;
+          : spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED} 1fr;
     }
   }
-};
+`;
 
 const Layout = ({ children }) => {
-  const isSmallScreen = useIsScreenSize();
+  const theme = useTheme();
+  const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
   const [isExpanded, setIsExpanded] = useState(true);
 
   // adapt sidebar for desktop/mobile display
   useEffect(() => {
-    setIsExpanded(!isSmallScreen);
-  }, [isSmallScreen]);
+    setIsExpanded(!matchesMd);
+  }, [matchesMd]);
 
   return (
-    <Root isExpanded={isExpanded} isSmallScreen={isSmallScreen}>
-      {isSmallScreen && isExpanded && (
+    <>
+      <GlobalLayout $isExpanded={isExpanded} />
+      {matchesMd && isExpanded && (
         <Shadow onClick={() => setIsExpanded(false)} />
       )}
       <Appbar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
-      <Sidebar
-        isExpanded={isExpanded}
-        isSmallScreen={isSmallScreen}
-        setIsExpanded={setIsExpanded}
-      />
-      <main
-        style={{
-          gridArea: "main",
-          left: getLeftMarginValue(isSmallScreen, isExpanded),
-          position: "fixed",
-          right: 0,
-          top: 0,
-          bottom: 0,
-          transition: "left 0.5s ease-in",
-        }}
-      >
-        <div>{children}</div>
-      </main>
-    </Root>
+      <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 };
 

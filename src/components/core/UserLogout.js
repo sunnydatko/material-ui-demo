@@ -8,9 +8,10 @@ import {
   Menu as MuiMenu,
   MenuItem,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 
-import { useTheme } from "@material-ui/core/styles";
 import {
   ExitToApp as ExitToAppIcon,
   KeyboardArrowDownRounded as ChevDownIcon,
@@ -19,6 +20,7 @@ import {
 
 const UserLogout = () => {
   const theme = useTheme();
+  const matchesMd = useMediaQuery(theme.breakpoints.up("md"));
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleShow = (event) => {
@@ -48,7 +50,7 @@ const UserLogout = () => {
           </Avatar>
         }
       >
-        <Typography variant="subtitle1">Sunny Datko</Typography>
+        {matchesMd && <Typography variant="subtitle1">Sunny Datko</Typography>}
       </Button>
       <MuiMenu
         anchorEl={anchorEl}

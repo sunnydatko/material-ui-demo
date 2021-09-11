@@ -2,64 +2,67 @@ import { NavLink, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 // material ui
-import {
-  Box,
-  Button,
-  Grid,
-  Hidden,
-  IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from "@material-ui/core";
-import {
-  AttachMoney,
-  ArrowBack,
-  ArrowForward,
-  Face,
-  Home,
-  Receipt,
-  Settings,
-} from "@material-ui/icons";
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { AttachMoney, Face, Home, Receipt, Settings } from "@material-ui/icons";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 import logo from "assets/sunny-designs.svg";
 import reactIcon from "assets/react-icon.svg";
 import * as spacing from "helpers/spacing";
 
 const Branding = styled.div`
-  margin: 10px auto;
-  padding: 8px 4px;
-  max-height: ${(props) => (props.isExpanded ? "31px" : "50px")};
-  max-width: ${(props) => (props.isExpanded ? "230px" : "72px")};
-  min-height: ${(props) => (props.isSmallScreen ? "31px" : "50px")};
-  min-width: ${(props) => (props.isSmallScreen ? "230px" : "72px")};
+  margin: 0px auto;
+  max-width: 220px;
+  padding-top: 16px;
+
+  img {
+    max-height: 56px;
+  }
 `;
 
-const Root = styled.div`
-  background-color: ${(props) => props.theme.palette.primary.dark} !important;
-  color: ${(props) => props.theme.palette.primary.contrastText} !important;
+const StyledSidebar = styled.nav`
+  background-color: ${(props) => props.theme.palette.primary.dark};
+  bottom: 0;
+  color: ${(props) => props.theme.palette.grey[200]};
+  grid-area: sidebar;
+  left: 0;
+  overflow-x: hidden;
   position: fixed;
   top: 0;
-  left: 0;
-  bottom: 0;
-  overflow-x: hidden;
   transition: width 0.5s ease-in;
-  width: ${(props) => getSidebarWidth(props)};
+  width: ${({ $isExpanded }) =>
+    $isExpanded
+      ? spacing.SIDEBAR_MOBILE_WIDTH_EXPANDED
+      : spacing.SIDEBAR_MOBILE_WIDTH_CONDENSED};
   z-index: 999;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.values.lg}px) {
+    top: ${spacing.APPBAR_HEIGHT};
+    width: ${({ $isExpanded }) =>
+      $isExpanded
+        ? spacing.SIDEBAR_DESKTOP_WIDTH_EXPANDED
+        : spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED};
+    z-index: ${({ $isExpanded }) => ($isExpanded ? "999" : "10")};
+  }
+
   .MuiListItem-root {
-    padding: ${(props) =>
-      props.isExpanded ? "12px 0 12px 24px" : "16px 0 16px 24px"};
-    width: ${(props) => (props.isExpanded ? "240px" : "inherit")};
-    transition: width 0.5s ease-in;
+    border-radius: none;
+    height: 56px;
+    padding: ${({ $isExpanded }) =>
+      $isExpanded ? "12px 0 12px 24px" : "16px 0 16px 24px"};
+    width: ${({ $isExpanded }) => ($isExpanded ? "240px" : "inherit")};
+  }
+
+  .MuiTypography-subtitle1 {
+    color: ${(props) => props.theme.palette.grey[100]}};
   }
 
   .MuiListItem-root.Mui-selected {
     background-color: ${(props) => props.theme.palette.primary.main} !important;
+    color: ${(props) => props.theme.palette.common.white};
 
-    .MuiTypography-body1 {
-      font-weight: 700 !important;
+    .MuiTypography-subtitle1 {
+      font-weight: 700;
     }
   }
 
@@ -67,25 +70,13 @@ const Root = styled.div`
   .MuiListItem-button:hover {
     background-color: ${(props) => props.theme.palette.primary.light};
   }
+
+  .MuiListItemIcon-root {
+    min-width: 36px;
+  }
 `;
 
-const getSidebarWidth = (props) => {
-  if (props.isSmallScreen) {
-    if (props.isExpanded) {
-      return spacing.SIDEBAR_MOBILE_WIDTH_EXPANDED;
-    } else {
-      return spacing.SIDEBAR_MOBILE_WIDTH_CONDENSED;
-    }
-  } else {
-    if (props.isExpanded) {
-      return spacing.SIDEBAR_DESKTOP_WIDTH_EXPANDED;
-    } else {
-      return spacing.SIDEBAR_DESKTOP_WIDTH_CONDENSED;
-    }
-  }
-};
-
-const menuItems = (matches) => {
+const menuItems = () => {
   return [
     {
       title: "Home",
@@ -115,19 +106,17 @@ const menuItems = (matches) => {
   ];
 };
 
-const Sidebar = ({ isExpanded, isSmallScreen, setIsExpanded }) => {
+const Sidebar = ({ isExpanded, setIsExpanded }) => {
   const matches = useRouteMatch(["*"]);
+  const theme = useTheme();
+  const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Root
-      isExpanded={isExpanded}
-      isSmallScreen={isSmallScreen}
-      style={{ gridArea: "sidebar" }}
-    >
-      <Branding isExpanded={isExpanded}>
+    <StyledSidebar $isExpanded={isExpanded}>
+      <Branding>
         <img
           alt="logo"
-          src={isSmallScreen ? logo : isExpanded ? logo : reactIcon}
+          src={matchesMd ? logo : isExpanded ? logo : reactIcon}
         />
       </Branding>
 
@@ -140,9 +129,7 @@ const Sidebar = ({ isExpanded, isSmallScreen, setIsExpanded }) => {
             component={NavLink}
             key={index}
             onClick={() =>
-              isSmallScreen && isExpanded
-                ? setIsExpanded(!isExpanded)
-                : undefined
+              matchesMd && isExpanded ? setIsExpanded(!isExpanded) : undefined
             }
             to={item.target}
             style={{ width: "100%" }}
@@ -152,32 +139,7 @@ const Sidebar = ({ isExpanded, isSmallScreen, setIsExpanded }) => {
           </ListItem>
         ))}
       </List>
-      <Box>
-        <Grid container>
-          <Hidden only={["xs", "sm"]}>
-            {isExpanded ? (
-              <Button
-                color="secondary"
-                onClick={() => setIsExpanded(!isExpanded)}
-                startIcon={<ArrowBack />}
-                style={{ width: "100%" }}
-              >
-                Collapse
-              </Button>
-            ) : (
-              <Box margin="0px auto">
-                <IconButton
-                  color="secondary"
-                  onClick={() => setIsExpanded(!isExpanded)}
-                >
-                  <ArrowForward />
-                </IconButton>
-              </Box>
-            )}
-          </Hidden>
-        </Grid>
-      </Box>
-    </Root>
+    </StyledSidebar>
   );
 };
 

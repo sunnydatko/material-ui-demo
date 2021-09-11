@@ -77,20 +77,19 @@ const InvoiceAdd = () => {
             {({ isSubmitting }) => (
               <Form id="form-customer">
                 <Grid container spacing={3}>
-                  <Grid item md={6} sm={12}>
+                  <Grid item md={6} xs={12}>
                     <FormField label="Customer" name="customer" required />
                   </Grid>
-                  <Grid item md={6} sm={12}>
+                  <Grid item md={6} xs={12}>
                     <FormField label="Amount Due" name="amount" required />
                   </Grid>
-                  <Grid item md={6} sm={12}>
+                  <Grid item md={6} xs={12}>
                     <FormControl fullWidth variant="outlined">
                       <InputLabel id="select-outlined-label">Status</InputLabel>
                       <Select
+                        fullWidth
                         labelId="select-outlined-label"
                         id="select-outlined"
-                        // value={age}
-                        //  onChange={handleChange}
                         label="Status"
                       >
                         <MenuItem value={10}>Canceled</MenuItem>
@@ -100,7 +99,7 @@ const InvoiceAdd = () => {
                       </Select>
                     </FormControl>
                   </Grid>
-                  <Grid item md={6} sm={12}>
+                  <Grid item md={6} xs={12}>
                     <TextField
                       defaultValue={getDate()}
                       fullWidth
